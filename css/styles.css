@@ -773,14 +773,14 @@ footer .footer-icon {
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
   border-radius: 4px;
 
-  transition-property: outline;
+  transition-property: outline, border;
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .subscribe:focus {
-
-  outline: 1px solid var(--accent-color);
+  border: 1px solid var(--accent-color);
+  outline: transparent;
 }
 
 .subscribe-btn {
@@ -1100,7 +1100,8 @@ footer .footer-icon {
 }
 
 .form-field:focus {
-  outline: 1px solid var(--accent-color);
+  border:1px solid var(--accent-color);
+  outline: transparent;
 }
 
 .form-item textarea {
@@ -1153,7 +1154,8 @@ label {
 }
 
 .comment:focus {
-  outline: 1px solid var(--accent-color);
+  border: 1px solid var(--accent-color);
+  outline: transparent;
 }
 
 .text {
@@ -1169,6 +1171,10 @@ label {
 
 .checkbox {
   margin: 7px;
+  
+}
+.checkbox:checked {
+  fill: var(--accent-color);
 }
 
 .checkbox-link {
@@ -1187,24 +1193,22 @@ label {
   font-size: 16px;
   line-height: 1.6;
   text-align: center;
+
   letter-spacing: 0.03em;
-  color: var(--title-text-color);
+  color: var(--background-color);
   border: 1px solid transparent;
   border-radius: 4px;
+  background-color: var(--accent-color);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+
   align-items: center;
   padding-left: 22px;
   padding-right: 22px;
   padding-top: 6px;
   padding-bottom: 6px;
 
-  transition-property: background-color, color;
+  transition-property: background-color, box-shadow;
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 
-}
-
-.submit:hover,
-.submit:focus {
-  color: var(--background-color);
-  background-color: var(--accent-color);
 }

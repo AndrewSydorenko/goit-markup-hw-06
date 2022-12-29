@@ -85,7 +85,7 @@ button:hover {
     0px 2px 2px rgba(0, 0, 0, 0.12);
 }
 
-/* Шапка */
+/* Header */
 header {
   border-bottom: 1px solid #ececec;
 }
@@ -103,7 +103,7 @@ header {
   color: var(--accent-color);
 }
 
-.logo-up {
+.logo__up {
   font-family: "Raleway";
   font-style: normal;
   font-weight: 700;
@@ -113,7 +113,7 @@ header {
   color: var(--title-text-color);
 }
 
-.logo-down {
+.logo__down {
   font-family: "Raleway";
   font-style: normal;
   font-weight: 700;
@@ -123,7 +123,24 @@ header {
   color: var(--background-color);
 }
 
-.site-nav {
+.justify-box {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.container-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+}
+
+.nav__list {
   padding: 0;
   margin-left: 93px;
   display: flex;
@@ -132,15 +149,15 @@ header {
   margin-bottom: 0;
 }
 
-.nav-item:not(:last-child) {
+.nav__item:not(:last-child) {
   margin-right: 50px;
 }
 
-.nav-item {
+.nav__item {
   position: relative;
 }
 
-.site-nav .link {
+.nav__link {
   display: block;
   padding-top: 0;
   padding-bottom: 0;
@@ -157,8 +174,8 @@ header {
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.site-nav .link:hover,
-.site-nav .link:focus {
+.nav__link:hover,
+.nav__link:focus {
   font-style: normal;
   font-weight: 500;
   font-size: 14px;
@@ -167,7 +184,7 @@ header {
   color: var(--accent-color);
 }
 
-.site-nav .link.current {
+.nav__link.current {
   font-style: normal;
   font-weight: 500;
   font-size: 14px;
@@ -176,7 +193,7 @@ header {
   color: var(--accent-color);
 }
 
-.site-nav .link.current::after {
+.nav__link.current::after {
   position: absolute;
   content: "";
   width: 100%;
@@ -188,7 +205,21 @@ header {
   border-radius: 2px;
 }
 
-.tell {
+.header-contacts__list {
+  display: flex;
+  justify-content: end;
+  align-content: center;
+  margin-bottom: 0;
+  margin-top: 0;
+  margin-left: auto;
+  padding: 0;
+}
+
+.header-contacts__list li+li {
+  margin-left: 50px;
+}
+
+.header-contact__link {
   display: flex;
   font-style: normal;
   font-weight: 500;
@@ -204,8 +235,8 @@ header {
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.tell:hover,
-.tell:focus {
+.header-contact__link:hover,
+.header-contact__link:focus {
   font-style: normal;
   font-weight: 500;
   font-size: 14px;
@@ -214,38 +245,7 @@ header {
   color: var(--accent-color);
 }
 
-.mail {
-  display: flex;
-  justify-content: end;
-  align-content: center;
-  margin-bottom: 0;
-  margin-top: 0;
-  margin-left: auto;
-  padding: 0;
-}
-
-.mail li + li {
-  margin-left: 50px;
-}
-
-.nav {
-  display: flex;
-  align-items: center;
-}
-
-.container-nav {
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-}
-
-.justify-box {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-}
-
-.mail .mail-icon {
+.header-contacts__icon {
   display: inline-block;
   fill: var(--primary-text-color);
 
@@ -254,15 +254,11 @@ header {
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.tell:hover .mail-icon,
-.tell:focus .mail-icon {
+.header-contact__link:hover .header-contacts__icon,
+.header-contact__link:focus .header-contacts__icon {
   fill: var(--accent-color);
 }
 
-.mail-pic {
-  display: flex;
-  gap: 10px;
-}
 
 /* Герой */
 .section-hero {
@@ -272,15 +268,13 @@ header {
 
   background-color: var(--hero-background);
   background-size: cover;
-  background-image: linear-gradient(
-      to right,
+  background-image: linear-gradient(to right,
       rgba(47, 48, 58, 0.4),
-      rgba(47, 48, 58, 0.4)
-    ),
+      rgba(47, 48, 58, 0.4)),
     url("../images/heroBg.jpg");
 }
 
-.hero-title {
+.hero__title {
   width: 696px;
   font-style: normal;
   font-weight: 900;
@@ -294,7 +288,7 @@ header {
   margin-bottom: 45px;
 }
 
-.hero-button {
+.hero__button {
   background: #2196f3;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
   border-radius: 4px;
@@ -316,7 +310,7 @@ header {
 }
 
 /* Переваги */
-.bonuses {
+.benefits {
   display: flex;
   box-sizing: border-box;
   justify-content: space-between;
@@ -326,7 +320,7 @@ header {
   gap: 30px;
 }
 
-.bonuses-title {
+.benefits__title {
   font-style: normal;
   font-weight: 700;
   font-size: 14px;
@@ -337,7 +331,7 @@ header {
   margin-bottom: 10px;
 }
 
-.bonuses-item {
+.benefits__item {
   margin-top: 0;
   margin-right: 0;
 
@@ -350,7 +344,7 @@ header {
   color: var(--primary-text-color);
 }
 
-.bonuses-icon {
+.benefits__icon {
   fill: #212121;
 }
 
@@ -367,11 +361,11 @@ header {
 }
 
 /* Чим займаємось */
-.section-examples {
+.section-speciality {
   padding-top: 0;
 }
 
-.examples-title {
+.speciality__title {
   margin-top: 0;
   margin-bottom: 50px;
   font-style: normal;
@@ -383,7 +377,7 @@ header {
   color: var(--title-text-color);
 }
 
-.examples-list {
+.speciality__list {
   gap: 30px;
   display: block;
   display: flex;
@@ -392,11 +386,11 @@ header {
   padding-left: 0;
 }
 
-.example {
+.speciality__item {
   position: relative;
 }
 
-.example > .label {
+.speciality__label {
   position: absolute;
   bottom: 0;
   right: 0;
@@ -417,7 +411,7 @@ header {
   background-color: var(--team-background);
 }
 
-.team-list {
+.team__list {
   display: flex;
   justify-content: space-around;
   margin-top: 0;
@@ -426,7 +420,7 @@ header {
   gap: 30px;
 }
 
-.igor {
+.team__igor {
   padding-bottom: 44px;
 
   font-style: normal;
@@ -442,7 +436,7 @@ header {
   border-radius: 0px 0px 4px 4px;
 }
 
-.olga {
+.team__olga {
   padding-bottom: 44px;
 
   font-style: normal;
@@ -458,7 +452,7 @@ header {
   border-radius: 0px 0px 4px 4px;
 }
 
-.mykola {
+.team__mykola {
   padding-bottom: 44px;
 
   font-style: normal;
@@ -474,7 +468,7 @@ header {
   border-radius: 0px 0px 4px 4px;
 }
 
-.misha {
+.team__misha {
   padding-bottom: 44px;
 
   font-style: normal;
@@ -490,7 +484,7 @@ header {
   border-radius: 0px 0px 4px 4px;
 }
 
-.team-pos {
+.team__pos {
   margin-top: 0;
   margin-bottom: 0;
   font-style: normal;
@@ -502,7 +496,7 @@ header {
   color: var(--primary-text-color);
 }
 
-.name {
+.team__name {
   margin-top: 0;
   margin-bottom: 0;
   font-style: normal;
@@ -514,12 +508,12 @@ header {
   color: var(--title-text-color);
 }
 
-.team-list h3 {
+.team__list h3 {
   margin-top: 30px;
   margin-bottom: 10px;
 }
 
-.social-list {
+.social__list {
   padding-left: 32px;
   padding-right: 32px;
   margin-top: 30px;
@@ -527,7 +521,7 @@ header {
   justify-content: space-evenly;
 }
 
-.social-link-link {
+.social__link {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -543,12 +537,12 @@ header {
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.social-link-link:hover,
-.social-link-link:focus {
+.social__link:hover,
+.social__link:focus {
   background-color: var(--accent-color);
 }
 
-.team-list .social-icon {
+.team__list .social__icon {
   fill: #afb1b8;
 
   transition-property: fill;
@@ -556,8 +550,8 @@ header {
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.social-link-link:hover .social-icon,
-.social-link-link:focus .social-icon {
+.social__link:hover .social__icon,
+.social__link:focus .social__icon {
   fill: #ffffff;
 }
 
@@ -1143,9 +1137,9 @@ label {
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.form-field:focus + .icon-person,
-.form-field:focus + .icon-phone,
-.form-field:focus + .icon-email {
+.form-field:focus+.icon-person,
+.form-field:focus+.icon-phone,
+.form-field:focus+.icon-email {
   fill: var(--accent-color);
 }
 
@@ -1156,6 +1150,7 @@ label {
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
+
 ::placeholder {
   font-style: normal;
   font-weight: 400;
@@ -1191,11 +1186,13 @@ label {
   border: 1px solid var(--accent-color);
   border-radius: 2px;
 }
+
 .checkbox:checked {
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3C!--! Font Awesome Pro 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --%3E%3Cpath d='M470.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L192 338.7 425.4 105.4c12.5-12.5 32.8-12.5 45.3 0z' fill='%23ffffff'/%3E%3C/svg%3E");
   background-position: center;
   background-color: var(--accent-color);
 }
+
 .checkbox .agree {
   font-style: normal;
   font-weight: 400;

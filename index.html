@@ -385,6 +385,15 @@
           </li>
         </ul>
       </div>
+      <form class="subscribe-box">
+        <label class="subscribe-title" for="subscribe">Підпишіться на розсилку</label>
+        <div class="form-box">
+          <input class="subscribe" type="email" name="email" id="subscribe" placeholder="E-mail">
+          <button class="subscribe-btn" type="submit">Підписатися<samp><svg class="icon-send" width="24" height="24">
+                <use href="./images/icons.svg#icon-send"></use>
+              </svg></samp></button>
+        </div>
+      </form>
     </div>
   </footer>
   <div class="backdrop is-hidden" data-modal>
@@ -392,9 +401,64 @@
       <button class="modal-btn" tipe="button" data-modal-close><svg class="icon-cross" width="20" height="20">
           <use href="./images/icons.svg#icon-cross"></use>
         </svg></button>
+
+      <form class="form js-speaker-form">
+        <p class="form-title">Залиште свої дані, ми вам передзвонимо</p>
+
+        <label for="user-name">Ім'я</label>
+        <div class="form-item">
+          <input class="form-field" type="text" name="name" id="user-name">
+          <svg class="icon-person" width="20" height="20">
+            <use href="./images/icons.svg#icon-person"></use>
+          </svg>
+        </div>
+
+        <label for="tel">Телефон</label>
+        <div class="form-item">
+          <input class="form-field" type="tel" name="tel" id="tel">
+          <svg class="icon-phone" width="20" height="20">
+            <use href="./images/icons.svg#icon-phone"></use>
+          </svg>
+        </div>
+
+        <label for="email">Пошта</label>
+        <div class="form-item">
+          <input class="form-field" type="email" name="email" id="email">
+          <svg class="icon-email" width="20" height="20">
+            <use href="./images/icons.svg#icon-email"></use>
+          </svg>
+        </div>
+
+        <label for="comment">Коментар</label>
+        <div class="form-item text">
+          <textarea class="comment" name="comment" id="comment" placeholder="Введіть текст"></textarea>
+        </div>
+
+        <div class="check-box">
+          <input class="checkbox" type="checkbox" name="rules" id="rules">
+          <label class="agree" for="rules">Погоджуюся з розсилкою та приймаю <a class="checkbox-link" href="">Умови
+              договору</a></label>
+        </div>
+
+        <button class="submit" type="submit">Відправити</button>
+      </form>
     </div>
   </div>
   <script src="./js/modal.js"></script>
+
+  <script>
+    (() => {
+      document
+        .querySelector('.js-speaker-form')
+        .addEventListener('subnit', e => {
+          e.preventDefault();
+
+          new FormData(e.currentTarget).forEach((value, name) =>
+            console.log(`${name}: ${value}`),
+          );
+        });
+    })();
+  </script>
 </body>
 
 </html>

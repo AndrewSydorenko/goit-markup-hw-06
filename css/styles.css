@@ -687,12 +687,12 @@ footer .footer-icon {
   flex-direction: column;
 }
 
-.subscribe-box {
+.subscribe {
   display: flex;
   flex-direction: column;
 }
 
-.subscribe-title {
+.subscribe__title {
   margin-bottom: 20px;
 
   font-style: normal;
@@ -704,7 +704,7 @@ footer .footer-icon {
   color: var(--background-color);
 }
 
-.subscribe {
+.subscribe__field {
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
@@ -728,12 +728,25 @@ footer .footer-icon {
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.subscribe:focus {
+.subscribe__field::placeholder {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+
+  display: flex;
+  align-items: center;
+  letter-spacing: 0.03em;
+
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.subscribe__field:focus {
   border: 1px solid var(--accent-color);
   outline: transparent;
 }
 
-.subscribe-btn {
+.subscribe__btn {
   position: relative;
 
   width: 200px;
@@ -760,12 +773,12 @@ footer .footer-icon {
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.subscribe-btn:hover {
+.subscribe__btn:hover {
   color: var(--hero-background);
   background-color: var(--accent-color);
 }
 
-.icon-send {
+.subscribe__icon {
   position: absolute;
   top: 13px;
   right: 28px;
@@ -777,7 +790,7 @@ footer .footer-icon {
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.subscribe-btn:hover .icon-send {
+.subscribe__btn:hover .subscribe__icon {
   fill: var(--hero-background);
 }
 
@@ -952,7 +965,7 @@ footer .footer-icon {
 
   width: 528px;
   height: 581px;
-  padding: 40px;
+  padding: 38px 40px 40px;
 
   background-color: var(--background-color);
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
@@ -1006,11 +1019,11 @@ footer .footer-icon {
   }
 }
 
-          /* Modal form */
+/* Modal form */
 
 .modal__title {
   margin-top: 0;
-  margin-bottom: 12px;
+  margin-bottom: 10px;
   align-self: center;
 
   font-style: normal;
@@ -1087,14 +1100,18 @@ label {
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.modal__field:focus+.modal__icon
- {
+.modal__field:focus+.modal__icon {
   fill: var(--accent-color);
 }
 
 .modal__comment {
   display: block;
-  padding: 16px, 12px;
+  padding-left: 16px;
+  padding-right: 16px;
+  padding-bottom: 12px;
+  padding-top: 12px;
+  margin-bottom: 20px;
+
   resize: none;
   width: 448px;
   height: 120px;
@@ -1130,34 +1147,33 @@ label {
 
 }
 
-.text {
-  margin-bottom: 20px;
-}
-
-.check-box {
-  display: inline-block;
+.check__box {
+  display: flex;
   margin-bottom: 30px;
-  justify-content: center;
+
   align-items: center;
   align-self: center;
+  justify-content: center;
 }
 
-.checkbox {
-  margin-right: 7px;
+.checkbox__point {
+  display: flex;
+  margin-right: 8px;
   appearance: none;
   width: 16px;
   height: 15px;
-  border: 1px solid var(--accent-color);
+  border: 2px solid var(--title-text-color);
   border-radius: 2px;
 }
 
-.checkbox:checked {
+.checkbox__point:checked {
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3C!--! Font Awesome Pro 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --%3E%3Cpath d='M470.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L192 338.7 425.4 105.4c12.5-12.5 32.8-12.5 45.3 0z' fill='%23ffffff'/%3E%3C/svg%3E");
   background-position: center;
   background-color: var(--accent-color);
+  border: 2px solid var(--accent-color);
 }
 
-.checkbox .agree {
+.checkbox__point .checkbox__agree {
   font-style: normal;
   font-weight: 400;
   font-size: 14px;
@@ -1168,7 +1184,7 @@ label {
   color: #757575;
 }
 
-.checkbox-link {
+.checkbox__link {
   font-style: normal;
   font-weight: 400;
   font-size: 14px;
@@ -1182,14 +1198,22 @@ label {
   border-bottom: 1px solid var(--accent-color);
 }
 
-.form .agree {
+.checkbox__agree {
   margin-bottom: 0;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 24px;
+
+  letter-spacing: 0.03em;
+
+  color: #757575;
 }
 
 .submit {
+  width: 200px;
+  height: 50px;
 
-  align-self: center;
-  font-style: normal;
   font-weight: 500;
   font-size: 16px;
   line-height: 1.6;
@@ -1206,6 +1230,7 @@ label {
   padding-right: 22px;
   padding-top: 6px;
   padding-bottom: 6px;
+  margin-left: 124px;
 
   transition-property: background-color, box-shadow;
   transition-duration: 250ms;
